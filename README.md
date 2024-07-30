@@ -12,17 +12,16 @@
 3. `then`과 `catch`를 이용하여 데이터를 처리하는 방법과 에러를 처리하는 방법 두 가지를 각각 보여주세요.
 
 ```javascript
-    const API_URL = "https://open.api.com/v1/data";
-    const WRONG_URL = "https://open.api.com/v1/wrong";
+const API_URL = "https://open.api.com/v1/data";
+const WRONG_URL = "https://open.api.com/v1/wrong";
 
-    function getData(url) {
-        // 3초 뒤 url 이 API_URL과 같다면 성공으로 처리를, 아닐 경우 실패로 처리를 하게 해주세요
-    }
+function getData(url) {
+  // 3초 뒤 url 이 API_URL과 같다면 성공으로 처리를, 아닐 경우 실패로 처리를 하게 해주세요
+}
 
-    // ...
+// ...
 
-    // getData(API_URL), getData(WRONG_URL) 각각 성공과 실패에 대한 처리를 코드작성해주세요.
-
+// getData(API_URL), getData(WRONG_URL) 각각 성공과 실패에 대한 처리를 코드작성해주세요.
 ```
 
 &nbsp;
@@ -139,7 +138,6 @@ html 파일을 하나 만들고 openAPI 를 활용해 고양이 사진을 불러
 </html>
 ```
 
-
 &nbsp;
 
 ## 5. [선택 문제] 가장 먼저 완료된 비동기 함수를 찾아라.
@@ -147,8 +145,7 @@ html 파일을 하나 만들고 openAPI 를 활용해 고양이 사진을 불러
 > 5번 문제는 선택 문제로 전 날 수업에서 배운지 않은 것을 활용하여 풀어야 합니다.
 > 필수 문제가 아니니 시간이 남을 경우 도전해보세요. (검색이 허용됩니다.)
 
-
-세 개의 비동기 작업이 있습니다. 각 작업은 랜덤한 시간 후에 완료됩니다. 
+세 개의 비동기 작업이 있습니다. 각 작업은 랜덤한 시간 후에 완료됩니다.
 
 이 중 가장 먼저 완료되는 작업의 결과를 반환하는 함수를 작성하세요.
 
@@ -156,33 +153,32 @@ html 파일을 하나 만들고 openAPI 를 활용해 고양이 사진을 불러
 
 2. 가장 먼저 완료된 작업의 결과를 반환하는 findFirstCompletedTask라는 함수를 작성하세요.
 
-
 ```javascript
-   function taskA() {
-    return new Promise((resolve) => {
-        const time = Math.floor(Math.random() * 5000);
-        setTimeout(() => {
-            resolve("Task A Complete");
-        }, time);
-    });
+function taskA() {
+  return new Promise((resolve) => {
+    const time = Math.floor(Math.random() * 5000);
+    setTimeout(() => {
+      resolve("Task A Complete");
+    }, time);
+  });
 }
 
 function taskB() {
-    return new Promise((resolve) => {
-        const time = Math.floor(Math.random() * 5000);
-        setTimeout(() => {
-            resolve("Task B Complete");
-        }, time);
-    });
+  return new Promise((resolve) => {
+    const time = Math.floor(Math.random() * 5000);
+    setTimeout(() => {
+      resolve("Task B Complete");
+    }, time);
+  });
 }
 
 function taskC() {
-    return new Promise((resolve) => {
-        const time = Math.floor(Math.random() * 5000);
-        setTimeout(() => {
-            resolve("Task C Complete");
-        }, time);
-    });
+  return new Promise((resolve) => {
+    const time = Math.floor(Math.random() * 5000);
+    setTimeout(() => {
+      resolve("Task C Complete");
+    }, time);
+  });
 }
 
 // 가장 먼저 완료된 작업을 찾아서 반환되는 값을 출력하세요.

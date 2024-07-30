@@ -29,11 +29,23 @@ html 파일을 하나 만들고 openAPI 를 활용해 고양이 사진을 불러
 
       fetch("https://api.thecatapi.com/v1/images/search")
         .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+          console.log(data);
+          const catImg = data.results;
+          const innerCat = document.getElementById("imageContainer");
+
+          catImg.forEach((cat) => {
+            const catCard = createImg(cat);
+            innerCat.appendChild(catCard);
+          });
+        })
         .catch((error) => console.log(error));
 
       function createImg() {
-        let imgBox = document.getElementById("imageContainer");
+        const imageBox = document.createElement("div");
+        imageBox.className = "imageContainer";
+
+        imageBox.innerHTML = `<img src="${url}">`;
       }
       // API_URL 과 options를 사용해 fetch 로 API 요청을 한 후, 해당 데이터를 통해 img 태그를 생성하여 주세요.
     </script>
